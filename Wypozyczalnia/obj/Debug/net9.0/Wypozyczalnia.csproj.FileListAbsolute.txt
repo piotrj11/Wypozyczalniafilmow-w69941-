@@ -1,0 +1,14 @@
+E:\PROJEKTPO\Wypozyczalnia\bin\Debug\net9.0\Wypozyczalnia.exe
+E:\PROJEKTPO\Wypozyczalnia\bin\Debug\net9.0\Wypozyczalnia.deps.json
+E:\PROJEKTPO\Wypozyczalnia\bin\Debug\net9.0\Wypozyczalnia.runtimeconfig.json
+E:\PROJEKTPO\Wypozyczalnia\bin\Debug\net9.0\Wypozyczalnia.dll
+E:\PROJEKTPO\Wypozyczalnia\bin\Debug\net9.0\Wypozyczalnia.pdb
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.GeneratedMSBuildEditorConfig.editorconfig
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.AssemblyInfoInputs.cache
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.AssemblyInfo.cs
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.csproj.CoreCompileInputs.cache
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.dll
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\refint\Wypozyczalnia.dll
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.pdb
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.genruntimeconfig.cache
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\ref\Wypozyczalnia.dll
