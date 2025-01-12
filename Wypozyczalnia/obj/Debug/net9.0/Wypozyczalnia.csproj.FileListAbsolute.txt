@@ -12,3 +12,4 @@ E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\refint\Wypozyczalnia.dll
 E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.pdb
 E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.genruntimeconfig.cache
 E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\ref\Wypozyczalnia.dll
+E:\PROJEKTPO\Wypozyczalnia\obj\Debug\net9.0\Wypozyczalnia.sourcelink.json
