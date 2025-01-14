@@ -1,6 +1,7 @@
 ﻿using System;
 using Wypozyczalnia.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 class Program
 {
@@ -8,7 +9,8 @@ class Program
     static int customerIDc = 1;
     static List<Movie> movies = new List<Movie>();
     static int MovieIDc = 1;
-
+    static List<Rental> rentals = new List<Rental>();
+    static int rentalIDc = 1;
 
     static void Main(string[] args)
     {
@@ -29,7 +31,7 @@ class Program
                     ManageMovies();
                     break;
                 case "2":
-                    Console.WriteLine("Rental manage selected");
+                    ManageRentals();
                     break;
                 case "3":
                     ManageCustomers();
@@ -47,6 +49,142 @@ class Program
             }
         }
     }
+
+    //podmenu do wypozyczan
+
+    static void ManageRentals()
+    {
+        bool isManagingRentals = true;
+
+        while (isManagingRentals)
+        {
+            Console.WriteLine("\n--- Manage rentals ---");
+            Console.WriteLine("1. Add rntal");
+            Console.WriteLine("2. View rentals");
+            Console.WriteLine("3. Update rental");
+            Console.WriteLine("4. Delete rental");
+            Console.WriteLine("5. Back to Main Menu");
+            Console.Write("Choose option: ");
+
+            var choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    AddRental();
+                    break;
+                case "2":
+                    ViewRentals();
+                    break;
+                case "3":
+                    UpdateRental();
+                    break;
+                case "4":
+                    DeleteRental();
+                    break;
+                case "5":
+                    isManagingRentals = false; 
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid option");
+                    break;
+            }
+        }
+    }
+
+    static void AddRental()
+    {
+        Console.Write("\nEnter ID ");
+        if (!int.TryParse(Console.ReadLine(), out int customerID) || customers.All(c => c.ID != customerID))
+        {
+            Console.WriteLine("Invalid ID");
+            return;
+        }
+ 
+        Console.Write("Enter Movie ID  ");
+        if (!int.TryParse(Console.ReadLine(), out int movieID) || movies.All(m => m.ID != movieID))
+        {
+            Console.WriteLine("Invalid ID");
+            return;
+        }
+
+        var rental = new Rental
+        {
+            ID = rentalIDc++,
+            CustomerID = customerID,
+            MovieID= movieID,
+            RentalDate = DateTime.Now
+        };
+
+        rentals.Add(rental);
+        Console.WriteLine("Rental added ");
+    }
+
+     static void ViewRentals()
+    {
+        Console.WriteLine("\n--- List of Rentals ---");
+        if (rentals.Count == 0)
+        {
+            Console.WriteLine("No rentals available");
+            return;
+        }
+
+        foreach (var rental in rentals)
+        {
+            Console.WriteLine(rental);
+        }
+    }
+
+
+     static void UpdateRental()
+    {
+        Console.Write("\nEnter ID ");
+        if (!int.TryParse(Console.ReadLine(), out int id))
+        {
+            Console.WriteLine("Invalid ID ");
+            return;
+        }
+
+        var rental = rentals.Find(r => r.ID == id);
+        if (rental == null)
+        {
+            Console.WriteLine("Rental not found");
+            return;
+        }
+
+        Console.Write("Enter new date  ");
+        string returnDateInput = Console.ReadLine();
+        if (!string.IsNullOrEmpty(returnDateInput) && DateTime.TryParse(returnDateInput, out DateTime returnDate))
+        {
+            rental.ReturnDate = returnDate;
+        }
+
+        Console.WriteLine("Rental updated ");
+    }
+
+    static void DeleteRental()
+    {
+        Console.Write("\nEnter ID ");
+        if (!int.TryParse(Console.ReadLine(), out int id))
+        {
+            Console.WriteLine("Invalid ID ");
+            return;
+        }
+
+        var rental = rentals.Find(r => r.ID == id);
+        if (rental == null)
+        {
+            Console.WriteLine("Rental not found");
+            return;
+        }
+
+        rentals.Remove(rental);
+        Console.WriteLine("Rental deleted ");
+    }
+
+
+
     //podmenu 2
     static void ManageCustomers()
     {
