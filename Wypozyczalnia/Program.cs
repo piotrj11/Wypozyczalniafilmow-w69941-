@@ -109,6 +109,13 @@ class Program
             return;
         }
 
+        if (rentals.Any(r => r.MovieID == movieID))
+        {  
+            Console.WriteLine("Movie rented out");
+            return;
+
+        }
+        
         var rental = new Rental
         {
             ID = rentalIDc++,
@@ -116,6 +123,9 @@ class Program
             MovieID= movieID,
             RentalDate = DateTime.Now
         };
+
+
+
 
         rentals.Add(rental);
         Console.WriteLine("Rental added ");
@@ -233,9 +243,18 @@ class Program
     {
         Console.Write("\nEnter name: ");
         string name = Console.ReadLine();
-
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            Console.WriteLine("Name cannot be empty");
+            return;
+        }
         Console.Write("Enter emaail: ");
         string email = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(email))
+        {
+            Console.WriteLine("Email cannot be empty");
+            return; 
+        }
 
         var newCustomer = new Customer
         {
@@ -360,10 +379,19 @@ class Program
     {
         Console.WriteLine("\nMovie title: ");
         string title = Console.ReadLine();
+        if (string.IsNullOrWhiteSpace(title))
+        {
+            Console.WriteLine("Title cannot be empty");
+            return;
+        }
 
         Console.Write("Movie genre: ");
         string genre = Console.ReadLine();
-
+        if (string.IsNullOrWhiteSpace(genre))
+        {
+            Console.WriteLine("Genre cannot be empty");
+            return;
+        }
         var NewMovie = new Movie
         {
             ID = MovieIDc++,
